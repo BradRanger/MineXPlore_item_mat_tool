@@ -1,0 +1,7 @@
+﻿  strutils.c
+C:\Users\Guillaume\Documents\MineXPlore_item_mat_tool\MineXPlore_item_mat_tool\strutils.c(15,71): warning C4047: 'function': 'const char *' differs in levels of indirection from 'const char'
+C:\Users\Guillaume\Documents\MineXPlore_item_mat_tool\MineXPlore_item_mat_tool\strutils.c(15,63): warning C4024: 'strlen': different types for formal and actual parameter 1
+C:\Users\Guillaume\Documents\MineXPlore_item_mat_tool\MineXPlore_item_mat_tool\strutils.c(59): warning C4715: 'attribListInit': not all control paths return a value
+C:\Users\Guillaume\Documents\MineXPlore_item_mat_tool\MineXPlore_item_mat_tool\strutils.c(83): warning C4172: returning address of local variable or temporary: buff
+C:\Users\Guillaume\Documents\MineXPlore_item_mat_tool\MineXPlore_item_mat_tool\strutils.c(74): warning C4172: returning address of local variable or temporary: buff
+  MineXPlore_item_mat_tool.vcxproj -> C:\Users\Guillaume\Documents\MineXPlore_item_mat_tool\x64\Debug\MineXPlore_item_mat_tool.exe
