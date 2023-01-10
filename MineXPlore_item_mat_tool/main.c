@@ -8,8 +8,9 @@ int main(void) {
 	fileNmCmpnts* sourceFile;			//file to create copies from filepath
 	fileNmCmpnts* destinationFile;		//File buffer to create copies at
 	
-	wordBank* wordBank;					//attribute list
+	wordBank* wordBank;					//base words
 
+	attNameList* fetchedAttribs;       	//attribute list
 
 
 	char buff[BUFFER_LGT] = "";			//source file filename
@@ -27,15 +28,15 @@ int main(void) {
 	strcpy(buff1, stringUserInput("attributes file name: "));
 	strcpy(buff1, strRemoveRrtn(buff1));
 
+	fetchedAttribs = wordBankInit(buff2,
+								  buff3);
 
 	strcpy(buff2, stringUserInput("target attribute to replace (usually 'white'): "));
 
 	int nbLinesInAttFile = countNbLinesInFile(attribListFP);
 
 	wordBank = wordBankInit(buff2,
-							buff3,
-							attribListFP,
-							nbLinesInAttFile);
+							buff3);
 
 
 	fileOpenRead(getFileName(sourceFile));

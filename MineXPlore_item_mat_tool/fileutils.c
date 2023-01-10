@@ -68,37 +68,11 @@ char* get_file_path(fileNmCmpnts* filepath) {
 	return filepath->filePath;
 }
 
-char* get_temp_ext(fileNmCmpnts* filepath) {
-
-	return filepath->temp_ext;
-}
-
 char* cat_path__file(fileNmCmpnts* filepath) {
 
 	char buff[FILENAME_MAX] = { 0 };
 
 	strcpy(buff, filepath->filePath);
-	strcat(buff, filepath->fileName);
-
-	return buff;
-};
-
-char* cat_temp__file(fileNmCmpnts* filepath) {
-
-	char buff[FILENAME_MAX] = { 0 };
-
-	strcat(buff, filepath->temp_ext);
-	strcat(buff, filepath->fileName);
-
-	return buff;
-};
-
-char* cat_path__temp__file(fileNmCmpnts* filepath) {
-
-	char buff[FILENAME_MAX] = { 0 };
-
-	strcpy(buff, filepath->filePath);
-	strcat(buff, filepath->temp_ext);
 	strcat(buff, filepath->fileName);
 
 	return buff;

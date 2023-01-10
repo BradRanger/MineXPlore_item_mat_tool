@@ -12,8 +12,11 @@ typedef struct t_attributeNamesList {
 
 }attNameList;
 
+
+
 typedef struct t_wordBank {
 	
+
 	char* itemName;				//Item name to put in file name
 	char* baseAttribute;		//Stores the target attribute to replace in the file
 	attNameList* attribList;		//Stores lowercase and uppercase list
