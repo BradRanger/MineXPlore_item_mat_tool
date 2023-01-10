@@ -4,51 +4,52 @@
 
 int main(void) {
 
-	fileNmCmpnts* attribListFP;
+	fileNmCmpnts* attribListFP;			//attributes list filepath init
+	fileNmCmpnts* sourceFile;			//file to create copies from filepath
+	fileNmCmpnts* destinationFile;		//File buffer to create copies at
+	
+	wordBank* wordBank;					//attribute list
 
 
 
-	char buff[BUFFER_LGT] = "";
-	char buff1[BUFFER_LGT] = "";
-	strcpy(buff,stringUserInput("attributes file name"));
+	char buff[BUFFER_LGT] = "";			//source file filename
+	char buff1[BUFFER_LGT] = "";		//attribute list filename
+	char buff2[BUFFER_LGT] = "";		//base attribute name
+	char buff3[BUFFER_LGT] = "";		//item name
+
+	sourceFile = fileNameCmpntsInit("", buff);
+	attribListFP = fileNameCmpntsInit("", buff1);
+
+	strcpy(buff, stringUserInput("file to create copies from file name: "));
 	strcpy(buff, strRemoveRrtn(buff));
 
-	attribListFP = fileNameCmpntsInit("", buff);
 
-	printf("%i\n",countNbLinesInFile(attribListFP));
+	strcpy(buff1, stringUserInput("attributes file name: "));
+	strcpy(buff1, strRemoveRrtn(buff1));
 
-	printf("%s\n", getFileName(attribListFP));
 
+	strcpy(buff2, stringUserInput("target attribute to replace (usually 'white'): "));
+
+	int nbLinesInAttFile = countNbLinesInFile(attribListFP);
+
+	wordBank = wordBankInit(buff2,
+							buff3,
+							attribListFP,
+							nbLinesInAttFile);
+
+
+	fileOpenRead(getFileName(sourceFile));
 	
-}
+	char newFileNames[BUFFER_LGT] = "";
+	strcpy(newFileNames, wordBank->attribList->AttribNameLwrC[1]);
+	printf("%s", newFileNames);
+
+	////strcpy(newFileNames, wordBank->baseAttribute);
+	////strcat(newFileNames, attribListFP->undsc);
+	////strcat(newFileNames, wordBank->itemName);
+
+	////printf("%s", newFileNames);
 
 
-//FILE* file;
+};
 
-//bool keepReading = true;
-
-//char buffer[BUFFER_LGT] = "";
-
-//int count = 0;
-
-//file = fopen("zcolors.txt", "r");
-
-//if (file == NULL) {
-//	printf("Couldn't open file.");
-//	exit(EXIT_FAILURE);
-//}
-
-//do {
-
-//	fgets(buffer, BUFFER_LGT, file);
-//	if (feof(file)) {
-//		keepReading = false;
-//	};
-
-//	strcpy(  )
-
-//	count++;
-//} while (keepReading);
-
-//fclose(file);
-//return count;

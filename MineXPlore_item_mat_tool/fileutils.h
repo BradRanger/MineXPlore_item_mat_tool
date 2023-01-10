@@ -6,14 +6,8 @@
 
 typedef struct fileNameComponents {
 
-	char* file_path;
-	char* file_name;
-	
-	char* temp_ext; // stores "temp____"
-	char* fileExtTxt;  // contains ".txt"
-	char* fileExtYml;  // contains ".yml"
-	char  undsc;	   // contains "_"
-
+	char* filePath;
+	char* fileName;
 
 }fileNmCmpnts;
 
